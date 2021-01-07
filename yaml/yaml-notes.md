@@ -66,14 +66,14 @@ flowstyles
         - set (unorderer list with no duplicates)
 - binary (binary data of octal strings - images,files)
 - allows custom extensible data type declarations (ex.: class types for objects)
-
+---
 \
 \
 \
 \
 .
 # YAML Syntax (Cheat Sheet)
---------------------------------------------------------------
+
 
 ## Comments
 - ```#``` - *line comments* comment the rest of the line
