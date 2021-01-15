@@ -36,13 +36,13 @@ To initialize Terrafor on a directory, you get into that directory and run:
 
     terraform init
 Terraform will create at least one ```.terraform.lock.hcl*``` lockfile. These lock files are mantained by terraform or its providers.
-Note that for a successfull initialization you'll need to have the providers, called in your configuration files, currectly configured.
+Note that for a successfull initialization you'll need to have the providers, called in your configuration files, currectly configured. According to the provider your configuration requires, terraform will fetch the necessary APIs and dependencies into ```.terraform```.
 ### Plan:
 Once you have finished editing your configurations and successfully ran the initialization, you can run:
 
     terraform plan
-Terraform will design a plan containig the necessary actions to implement your infrastructure and present it to you. You can have the plan exported to a file using the parameter ``` -out <file_name> ```.
-
+Terraform will design a plan containig the necessary actions to implement your infrastructure and present it to you. You can have the plan exported to a file using the parameter ``` -out=<file_name> ```.
+### Apply
     terraform apply
 
     terraform destroy
