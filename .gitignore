@@ -3,3 +3,4 @@
 #Terraform management files
 .terraform/
 .terraform.lock*
+terraform.tfstate*
