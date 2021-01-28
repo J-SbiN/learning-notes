@@ -60,7 +60,7 @@ To initialize Terraform on a directory, you get into that directory and run:
 
     terraform init
 Terraform will create at least one `.terraform.lock.hcl*` lockfile. These lock files are maintained by terraform or its providers.
-Note that, for a successful initialization, you'll need to have the providers, called in your configuration files, correctly configured. According to the provider your configuration requires, terraform will fetch the necessary APIs and dependencies into `.terraform`.
+Note that, for a successful initialization, you'll need to have the providers, called in your configuration files, correctly configured. According to the provider your configuration requires, terraform will fetch the necessary plugins and dependencies into `.terraform`.
 
 ### Validate
 Before proceeding, you may ask terraform to validate your configuration. This is a good practice - run:
@@ -122,26 +122,30 @@ The very basic building blocks of a terraform configuration file are:
 - **Comments**  -   the usual comments
     - *in line* -   `#` or `//`
     - *bulk comment*    -   `/*` and `*/` initiate and terminate the multiline comment.
-- **Arguments** -   a variable and its value in the form: `variable = "value"`.
-- **Blocks**    -   a block is a container for other content (including blocks).
-
-        BlockType "lable1" "lablen" {
-            variable1 = "value1"
-
-            another-block_type {
-                variable2 = "value2"
-            }
-        }
-    - Blocks may have several *block types*:
-        - Terraform built-in *types*. 
-        - Provider specific *types*. Check in [references](#References) according to your provider.
-    - The number and type of labels varies according to the *block type*.
-    - Each block type may heve its own requirements.
-
 - **Identifiers**   -   the actual names of the variables, block types and the names of most Terraform constructs.
     - Identifiers may contain letters, digits, hyphens and underscores.
     - An identifier must not start with a digit.
     - A regex could be `[a-Z_-][0-9a-Z_-]*`.`[a-Z_][0-9a-Z_-]*`
+- **Expressions** - a generic expression that represents a yields a value. These can be a simple string or a complex expressions such as references to data exported by resources, arithmetic, conditional evaluation, and a number of terraform built-in functions.
+- **Arguments** -   an identifier and an expression that represent a variable and its value in the form: `identifier = expression`. 
+- **Blocks**    -   a block is a container for other content (including blocks).
+
+        BlockType "lable1" "lablen" {
+            identifier1 = "expression1" # argument1
+
+            # the block body may include other blocks
+            another-block_type "labelA" "labelN" {
+                identifierA = "${{ some + complex * $(computation.result) }}"  # argumentA
+            }
+        }
+    - Blocks may have several *block types*:
+        - Terraform built-in *types*. 
+        - Provider specific *types*, according to your provider.
+    - The number and type of labels varies according to the *block type*.
+    - Each *block type* may have its own required *arguments*.
+
+You may read about your specific provider's *block types* and requirements in [Terraform Regestry](https://registry.terraform.io/browse/providers).
+
   
 
 ## Lose Notes:
@@ -166,11 +170,8 @@ ___
 - https://www.terraform.io/docs/glossary.html
 - https://learn.hashicorp.com/terraform
 - https://www.terraform.io/docs/configuration/index.html
-- https://github.com/hashicorp/hcl/blob/hcl2/hclsyntax/spec.md
-- AWS: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
-- GCP: https://registry.terraform.io/providers/hashicorp/google/latest/docs
-- Azure: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management
-___
+- TF Syntax: https://github.com/hashicorp/hcl/blob/hcl2/hclsyntax/spec.md
+- Providers: https://registry.terraform.io/providers/
 ---
 \
 \
