@@ -8,33 +8,25 @@ For a complete and updated refernce check the [official YAML page](https://yaml.
 I found this [quick cheat sheet](https://gist.github.com/jonschlinkert/5170877) very usefull.
 
 The rest of this document is me writing down to consolidate what I know and for self retrospective looping. 
-
-## Overview/Structure/Glossary
-YAML is generally chosen for its flexibility to describe and transmit large, complex and not so structured chunks of information. But its flexibility made it usable for kinds of tasks.
-
-To organize the information 
- 
-**indicators** - used to denote scope
-
-block colections
-block sequencies
-mappings
-flowstyles
+___
+\
+\
+\
+\
+\
+.
 
 
-- **stream**
-- **document**
-- **block**
-- **node**
-- **colection**
-- **list**
-- **array**
 
+
+
+# Overview and Glossary
+YAML is generally chosen for its flexibility to describe and transmit large, complex and not so structured chunks of information. But its flexibility made it usable for all kinds of tasks.
 
 ### Important Notes
 - Case sensitive
 - Space (not tab) indentation
-- Indentation may be used for nesting
+- Indentation represents nesting
 - Non-hierarchical data models
 - C like escape sequencies
 
@@ -50,6 +42,7 @@ flowstyles
     - software version numbers might be converted to floats
 - truncated files may be interpreted as valid YAML due to the absence of terminators
 - configuration files can trigger commands execution or load contents without the users 
+
 
 ## Native Datatypes
 - scalars
@@ -72,8 +65,12 @@ flowstyles
 \
 \
 .
-# YAML Syntax (Cheat Sheet)
 
+
+
+
+
+# YAML Syntax
 
 ## Comments
 - ```#``` - *line comments* comment the rest of the line
@@ -83,7 +80,7 @@ flowstyles
 - there is no bulk comment
 ```
 #  Comments with several lines 
-# need several '#'s at line start.
+# need several lines starting with '#'s.
 ```
 
 ## Stream Control
@@ -145,6 +142,11 @@ key: value  # the simplest key-value declaration
 \
 \
 .
+
+
+
+
+
 # YAML Examples
 
 ## Stream Flow
@@ -176,6 +178,42 @@ numbers:
   one: null
   two: null
   three: null
+  
+---
+\
+\
+\
+\
+.
+
+
+
+
+
+# Glossary
+**block colections**
+
+**block sequencies**
+
+**mappings**
+
+**flowstyles**
+
+**indicators** - used to denote scope
+
+**stream**
+
+**document**
+
+**block**
+
+**node**
+
+**colection**
+
+**list**
+
+**array**
 
 ---
 \
@@ -183,9 +221,15 @@ numbers:
 \
 \
 .
+
+
+
+
+
 # References
 - https://en.wikipedia.org/wiki/YAML
 - https://www.w3schools.io/file/yaml-introduction/
 - https://www.tutorialspoint.com/yaml/index.htm
 - https://yaml.org/spec/1.2/spec.html
 - https://gist.github.com/jonschlinkert/5170877
+---
