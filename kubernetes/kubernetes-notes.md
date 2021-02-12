@@ -36,7 +36,7 @@ A *Control Plane* contains:
     - an `etcd` storage unit
     - a `kube-scheduler`
     - a `kube-controller-manager`
-    - (optionally) a `cloud-controler-manager`
+    - (optionally) a `cloud-controller-manager`
 
 All together, the *Control Plane*:
 - holds the CSD File
@@ -136,13 +136,13 @@ The default *Container Runtime* is Docker but *Kubernetes* is agnostic to the *C
     - own network namespace
     - virtual ethernet connection
 - contains at least a "pause" container
-    - it is a placeholder container (usually called dbox")
+    - it is a placeholder container (usually called sandbox")
     - reserves a pod's namespace
-    - holds the pod and ist namespace if the 'main' ainer dies or gets replaced
+    - holds the pod and ist namespace if the 'main' container dies or gets replaced
 - pods are described on a pod manifest file
 - containers in the same pod scale together
     
-### Why a Pod?
+### **Why a *Pod*?**
 - The concept was created to avoid port-mapping conflicts amongst the containers on the hosting machines.
 - Grants Container Runtime agnosticism - while changing the Container Runtime the K8s configuration stays the same.
 - a "pause" container grants that a pod is kept even if all the application containers in it die.
@@ -209,6 +209,7 @@ The particular case of running a shell connected to your terminal is of particul
 Another interesting case could be sending a local script to run inside a container with:
 
     kubectl exec -it ${POD_NAME} -- sh -c "${PATH_TO_SCRIPT}"
+
 \
 \
 \
@@ -306,12 +307,9 @@ If service doesn't respond 200-299, instead of getting destroyed and rebuilt, th
 \
 .
 # References
-https://kubernetes.io/docs/home/
-
-https://www.youtube.com/watch?v=lAyL9HKx8cQ
-
-https://www.youtube.com/playlist?list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC
-
+https://kubernetes.io/docs/home/ \
+https://www.youtube.com/watch?v=lAyL9HKx8cQ \
+https://www.youtube.com/playlist?list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC \
 https://www.youtube.com/hashtag/kubernetesbestpractices
 
 
