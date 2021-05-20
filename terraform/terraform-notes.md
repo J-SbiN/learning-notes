@@ -88,6 +88,11 @@ This actually creates the real world infrastructure. If you want to apply a spec
 ### Destroy
 At any point you can destroy your infrastructure in a programmatic fashion - just run: 
 
+This actually creates the real world infrastructure. If you want to apply a specific plan.
+
+### Destroy
+At any point you can destroy your infrastructure in a programmatic fashion - just run: 
+
     terraform destroy
 and *Terraform* wil make sure every component gets destroyed in the correct order.
 
@@ -172,6 +177,10 @@ ___
 - https://www.terraform.io/docs/configuration/index.html
 - TF Syntax: https://github.com/hashicorp/hcl/blob/hcl2/hclsyntax/spec.md
 - Providers: https://registry.terraform.io/providers/
+- https://github.com/hashicorp/hcl/blob/hcl2/hclsyntax/spec.md
+- AWS: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+- GCP: https://registry.terraform.io/providers/hashicorp/google/latest/docs
+- Azure: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management
 ---
 \
 \
