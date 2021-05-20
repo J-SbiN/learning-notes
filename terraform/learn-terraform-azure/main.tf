@@ -23,6 +23,11 @@ resource "azurerm_resource_group" "rg" {
 }
 
 
+
+
+
+
+
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
     name                = "myTFVnet"
@@ -31,8 +36,6 @@ resource "azurerm_virtual_network" "vnet" {
     resource_group_name = azurerm_resource_group.rg.name
 }
 
-
-
 variable "admin_username" {
     type = string
     description = "Administrator user name for virtual machine"
@@ -40,8 +43,11 @@ variable "admin_username" {
 
 variable "admin_password" {
     type = string
-    description = "Password must meet Azure complexity requirements"
+    description = "Password must meet Azure complexity requirements\n   Ataum!... mas isto n devia ser oculto!?"
 }
+
+
+
 
 # Create subnet
 resource "azurerm_subnet" "subnet" {
@@ -51,6 +57,8 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
+
+
 # Create public IP
 resource "azurerm_public_ip" "publicip" {
   name                = "myTFPublicIP"
@@ -58,6 +66,8 @@ resource "azurerm_public_ip" "publicip" {
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
 }
+
+
 
 
 # Create Network Security Group and rule
@@ -79,6 +89,8 @@ resource "azurerm_network_security_group" "nsg" {
   }
 }
 
+
+
 # Create network interface
 resource "azurerm_network_interface" "nic" {
   name                      = "myNIC"
@@ -92,6 +104,8 @@ resource "azurerm_network_interface" "nic" {
     public_ip_address_id          = azurerm_public_ip.publicip.id
   }
 }
+
+
 
 # Create a Linux virtual machine
 resource "azurerm_virtual_machine" "vm" {
@@ -126,8 +140,35 @@ resource "azurerm_virtual_machine" "vm" {
   }
 }
 
+
+
+
+
 data "azurerm_public_ip" "ip" {
   name                = azurerm_public_ip.publicip.name
   resource_group_name = azurerm_virtual_machine.vm.resource_group_name
   depends_on          = [azurerm_virtual_machine.vm]
 }
+
+
+
+
+
+
+
+output "public_ip_address" {
+  value = data.azurerm_public_ip.ip.ip_address
+}
+
+output "public_ip_address_again" {
+  value = data.azurerm_public_ip.ip.ip_address
+}
+
+output "whos_admin" {
+  value = var.admin_username
+}
+
+output "snoop-passwd" {
+  value = var.admin_password
+}
+
