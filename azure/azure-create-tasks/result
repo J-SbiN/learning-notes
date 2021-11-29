@@ -1,0 +1,62 @@
+{
+  "fields": {
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.StateChangeDate": "2021-06-29T11:38:51.86Z",
+    "Microsoft.VSTS.Scheduling.OriginalEstimate": 2.5,
+    "System.AreaPath": "Bilaterals\\Dev Team",
+    "System.AssignedTo": {
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/MOServices/_apis/GraphProfile/MemberAvatars/aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1"
+        }
+      },
+      "descriptor": "aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1",
+      "displayName": "Jorge Sabino",
+      "id": "a8d22a5e-e748-631c-b57a-58999b502c35",
+      "imageUrl": "https://dev.azure.com/MOServices/_apis/GraphProfile/MemberAvatars/aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1",
+      "uniqueName": "jorge.sabino@cgi.com",
+      "url": "https://spsprodweu3.vssps.visualstudio.com/Aaeb206cc-0d57-4142-8545-0e5c468dc23b/_apis/Identities/a8d22a5e-e748-631c-b57a-58999b502c35"
+    },
+    "System.ChangedBy": {
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/MOServices/_apis/GraphProfile/MemberAvatars/aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1"
+        }
+      },
+      "descriptor": "aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1",
+      "displayName": "Jorge Sabino",
+      "id": "a8d22a5e-e748-631c-b57a-58999b502c35",
+      "imageUrl": "https://dev.azure.com/MOServices/_apis/GraphProfile/MemberAvatars/aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1",
+      "uniqueName": "jorge.sabino@cgi.com",
+      "url": "https://spsprodweu3.vssps.visualstudio.com/Aaeb206cc-0d57-4142-8545-0e5c468dc23b/_apis/Identities/a8d22a5e-e748-631c-b57a-58999b502c35"
+    },
+    "System.ChangedDate": "2021-06-29T11:38:51.86Z",
+    "System.CommentCount": 0,
+    "System.CreatedBy": {
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/MOServices/_apis/GraphProfile/MemberAvatars/aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1"
+        }
+      },
+      "descriptor": "aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1",
+      "displayName": "Jorge Sabino",
+      "id": "a8d22a5e-e748-631c-b57a-58999b502c35",
+      "imageUrl": "https://dev.azure.com/MOServices/_apis/GraphProfile/MemberAvatars/aad.YThkMjJhNWUtZTc0OC03MzFjLWI1N2EtNTg5OTliNTAyYzM1",
+      "uniqueName": "jorge.sabino@cgi.com",
+      "url": "https://spsprodweu3.vssps.visualstudio.com/Aaeb206cc-0d57-4142-8545-0e5c468dc23b/_apis/Identities/a8d22a5e-e748-631c-b57a-58999b502c35"
+    },
+    "System.CreatedDate": "2021-06-29T11:38:51.86Z",
+    "System.Description": "creating a task for a pbi via cli",
+    "System.IterationPath": "Bilaterals\\Sprint 24",
+    "System.Reason": "New task",
+    "System.State": "To Do",
+    "System.Tags": "24; Ceremony Time Dev",
+    "System.TeamProject": "Bilaterals",
+    "System.Title": "test cli creation",
+    "System.WorkItemType": "Task"
+  },
+  "id": 6062,
+  "relations": null,
+  "rev": 1,
+  "url": "https://dev.azure.com/MOServices/02a100dc-c9a6-4b54-a69b-ee610b8caf0e/_apis/wit/workItems/6062"
+}
