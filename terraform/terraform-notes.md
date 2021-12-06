@@ -1,7 +1,7 @@
 # Terraform
 *Terraform* is an application to manage infrastructure. It is based on the idea of infrastructure described as code.
 
-*Terraform* gathers a series of APIs so you can centralize/decentralize and abstract multiple services (such as AWS, Azure, Google Cloud, ...) and manage them with terraform commands.
+*Terraform* gathers a series of APIs so you can centralize/decentralize and abstract multiple services (such as AWS, Azure, Google Cloud, ...) and manage them in a single environment.
 
 Terraform as a specific syntax to describe infrastructure as code - but it also parses json as input infrastructure description. 
 ___
@@ -35,7 +35,7 @@ Once Terraform is operating in a directory, that directory may contain the follo
     - `.terraform.lock.hcl` - a lockfile for terraform to workflow control avoiding overlapping.
     - `.terraform directory` - directories which mainly refer to providers APIs. 
 
-The set of configuration files in a specific directory is called a *module*. The files contained in nested directories are separated modules. Terraform only considers *sub-modules* if they are called on the *root module*.
+The set of configuration files in a specific directory is called a *module*. The files contained in distinct or nested directories are separated modules. Terraform only considers *sub-modules* if they are called on the *root module*.
 
 
 ## Basic Operation
@@ -59,7 +59,7 @@ Before you actually initialize terraform you need to create at least one configu
 To initialize Terraform on a directory, you get into that directory and run:
 
     terraform init
-Terraform will create at least one `.terraform.lock.hcl*` lockfile. These lock files are maintained by terraform or its providers.
+Terraform will create at least one `.terraform.lock.hcl*` lockfile. These lock files are maintained by terraform or its providers and are used to void concurrency issues.
 Note that, for a successful initialization, you'll need to have the providers, called in your configuration files, correctly configured. According to the provider your configuration requires, terraform will fetch the necessary plugins and dependencies into `.terraform`.
 
 ### Validate
@@ -84,11 +84,6 @@ To apply the latest result of the plan command changes you can simply run:
     terraform apply [plan-file-path]
 
 This actually creates the real world infrastructure. If you want to apply a specific plan, just pass the `plan-file-path` as an argument. The default behavior is to run a new plan step and use that plan.
-
-### Destroy
-At any point you can destroy your infrastructure in a programmatic fashion - just run: 
-
-This actually creates the real world infrastructure. If you want to apply a specific plan.
 
 ### Destroy
 At any point you can destroy your infrastructure in a programmatic fashion - just run: 
@@ -131,8 +126,9 @@ The very basic building blocks of a terraform configuration file are:
     - Identifiers may contain letters, digits, hyphens and underscores.
     - An identifier must not start with a digit.
     - A regex could be `[a-Z_-][0-9a-Z_-]*`.`[a-Z_][0-9a-Z_-]*`
-- **Expressions** - a generic expression that represents a yields a value. These can be a simple string or a complex expressions such as references to data exported by resources, arithmetic, conditional evaluation, and a number of terraform built-in functions.
-- **Arguments** -   an identifier and an expression that represent a variable and its value in the form: `identifier = expression`. 
+    - storage accounts names may only contain lowercase or numbers: `[a-z][a-z0-9]*`
+- **Expressions** - a generic expression that represents a yields a value. These can be a simple string or a complex expressions such as references to data exported by resources, arithmetic, conditional evaluation, or any terraform built-in functions.
+- **Arguments** - an identifier and an expression that represent a variable and its value in the form: `identifier = expression`. 
 - **Blocks**    -   a block is a container for other content (including blocks).
 
         BlockType "lable1" "lablen" {
@@ -148,7 +144,6 @@ The very basic building blocks of a terraform configuration file are:
         - Provider specific *types*, according to your provider.
     - The number and type of labels varies according to the *block type*.
     - Each *block type* may have its own required *arguments*.
-
 You may read about your specific provider's *block types* and requirements in [Terraform Regestry](https://registry.terraform.io/browse/providers).
 
   
