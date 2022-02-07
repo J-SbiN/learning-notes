@@ -1,0 +1,50 @@
+
+AZURE
+
+
+User Principal (Account)   n---n   Tenant   1---n   Subscription   1---n   Resource Group   1---n   Resources
+
+
+
+
+Security Principles (Accounts)
+    Service Principle
+    User Principle
+
+
+Tenant ("Senhorío")
+Maps User Principles as Admins/Responsibles (financialy, mostly) of a Subscription  
+    Subscription (agregates regarding cost centers)
+        Resource Group (agregates actual resources)
+            Resources
+
+
+Active Directory:
+#################
+    Users
+    User Groups
+    Permition
+    Roles
+    Application (Service Principle)
+
+    Directory:
+    Maps User Principle permissions on Azure Subscriptions (Resources) according to Active Directory Permissions
+        --> What Subscriptions
+            --> What permissions to what resources under each Subscription
+
+    App Registration:
+    Maps Service Principle permissions on Azure Subscriptions (Resources) according to Active Directory Permissions
+        --> What Subscriptions
+            --> What permissions to what resources under each Subscription
+
+Resources:
+##########
+
+
+DevOps:
+#######
+Service Connector
+
+
+Enterprise Application
+

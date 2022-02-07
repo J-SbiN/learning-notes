@@ -1,0 +1,60 @@
+
+
+# using wxt to force output to the screen
+set terminal wxt size 350,262 enhanced font 'Verdana,10' persist
+
+
+
+# Setting Styles
+###############
+
+# Line styles
+set style line 1 linecolor rgb '#0050ad' linetype 2 linewidth 3
+set style line 2 linecolor rgb '#18dd1f' linetype 1 linewidth 2
+set style line 3 linecolor rgb '#dd181f' linetype 1 linewidth 2
+
+# Line width of the axes
+set border linewidth 1.5
+
+
+
+# Defining the functions to plot
+#############
+
+A = 0.9
+f(x) = A * sin(x)
+
+a1 = 1
+b1 = -2
+g(x) = a1 * x + b1
+
+a2 = -1
+b2 = 2
+h(x) = a2 * x + b2
+
+
+
+# Setting Axes
+###############
+
+# Axes label
+set xlabel 'x'
+set ylabel 'y'
+
+# Axes ranges
+set xrange [-pi/4:pi]
+set yrange [-0.7:1.2]
+
+# Axes tics
+set xtics ('-2π' -2*pi, '-π' -pi, 0, 'π' pi, '2π' 2*pi)
+set ytics 1
+set tics scale 0.75
+
+
+ 
+# Plotting
+###########
+
+plot f(x) title 'sin(x)' with lines linestyle 1, \
+     g(x) notitle with lines linestyle 2, \
+     h(x) with lines linestyle 3
