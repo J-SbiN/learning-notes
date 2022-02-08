@@ -1,0 +1,19 @@
+https://bit.ly/32CwCd6
+
+rjam.pinto@gmail.com
+
+30
+2, 7, 9, 14, 21
+
+
+Infrastructure As Code (IaC)
+  => Docker, Kubernets
+
+docker hub
+Hyper-v, Vmware => Máquina Virtual 
+Maquina REal 
+
+=> Virtualization
+     generation 1 => Make a Individual VM
+     generation 2 => Make a Multiple VMs with Delta from one Base VM
+     generation 3 => Containers 
