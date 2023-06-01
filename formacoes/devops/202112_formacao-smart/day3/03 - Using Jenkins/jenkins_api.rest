@@ -1,0 +1,3 @@
+curl GET http://localhost:8080/api/json?pretty=true --user ricardo:11ddb267ca9079a2d2083ac1bc5cfecd6f
+
+curl -X POST http://localhost:8080/job/mavenproject/build --user ricardo:11ddb267ca9079a2d2083ac1bc5cfecd6f

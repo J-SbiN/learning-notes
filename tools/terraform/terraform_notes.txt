@@ -1,0 +1,26 @@
+# Terraform
+
+
+
+## Terraform Execution:
+	everything is configured as code
+	keeps track of versioning of the infrastructure code
+	automatically decides when to parallelize/sequentialize tasks
+	
+
+## Terraform Configuration:
+	
+
+## 4 Main Commands:
+	Refresh - 	check what the world looks like
+	Plan	-	create an action plan to change the infrastructure to what is described
+	Apply	-	applies the 'Plan'
+	Destroy	-	destroys all elements in a systematic fashion
+	
+
+## Terraform Architecture:
+	TF Configuration [user input]
+	TF (monolithic) Core
+	TF Status [the result of refresh - managed by TF]
+	Providers [any external services I/P/SaaS]
+	
