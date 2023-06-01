@@ -1,7 +1,7 @@
 
 
 # using wxt to force output to the screen
-set terminal wxt size 350,262 enhanced font 'Verdana,10' persist
+set terminal x11 size 350,262 enhanced font 'Verdana,10' persist
 
 
 

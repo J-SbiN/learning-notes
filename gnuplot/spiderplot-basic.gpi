@@ -1,0 +1,67 @@
+#!/usr/local/bin/gnuplot -persist
+set terminal x11 enhanced font "arial,10" size 600, 400 persist
+# set output 'spiderplot.1.png'
+unset border
+set key fixed right top vertical Right noreverse enhanced noautotitle nobox
+unset parametric
+set spiderplot
+set style spiderplot  linewidth 1.000 dashtype solid pointtype 1 pointsize default
+set style spiderplot fillstyle  empty border
+set size ratio 1 1,1
+set style data spiderplot
+unset xtics
+unset ytics
+unset ztics
+unset cbtics
+unset rtics
+unset paxis 1 tics
+unset paxis 2 tics
+unset paxis 3 tics
+unset paxis 4 tics
+unset paxis 5 tics
+unset paxis 6 tics
+unset paxis 7 tics
+unset paxis 8 tics
+unset paxis 9 tics
+unset paxis 10 tics
+set title "default spiderplot style" 
+set xrange [ * : * ] noreverse writeback
+set x2range [ * : * ] noreverse writeback
+set yrange [ * : * ] noreverse writeback
+set y2range [ * : * ] noreverse writeback
+set zrange [ * : * ] noreverse writeback
+set cbrange [ * : * ] noreverse writeback
+set rrange [ * : * ] noreverse writeback
+set paxis 1 range [ 0.00000 : 100.000 ]  noextend
+set paxis 1 label "A" font "" textcolor lt -1 norotate
+set paxis 2 range [ 0.00000 : 100.000 ]  noextend
+set paxis 2 label "B" font "" textcolor lt -1 norotate
+set paxis 3 range [ 0.00000 : 100.000 ]  noextend
+set paxis 3 label "C" font "" textcolor lt -1 norotate
+set paxis 4 range [ 0.00000 : 100.000 ]  noextend
+set paxis 4 label "D" font "" textcolor lt -1 norotate
+set paxis 5 range [ 0.00000 : 100.000 ]  noextend
+set paxis 5 label "E" font "" textcolor lt -1 norotate
+set paxis 6 range [ 0.00000 : 100.000 ]  noextend
+set paxis 6 label "F" font "" textcolor lt -1 norotate
+set paxis 7 range [ 0.00000 : 100.000 ]  noextend
+set paxis 7 label "G" font "" textcolor lt -1 norotate
+set paxis 8 range [ 0.00000 : 100.000 ]  noextend
+set paxis 9 range [ 0.00000 : 100.000 ]  noextend
+set paxis 10 range [ 0.00000 : 100.000 ]  noextend
+set colorbox vertical origin screen 0.9, 0.2 size screen 0.05, 0.6 front  noinvert bdefault
+NO_ANIMATION = 1
+
+
+## Last datafile plotted: "$DATA"
+$DATA << EOD
+A	B	C	D	E	F   G
+15	75	20	43	90	50  20
+30  100 40  86  100 100 40
+EOD
+
+set for [i=1:10] paxis i range [0:100]
+
+set title "default spiderplot style"
+plot for [i=1:7] $DATA using i title columnhead
+plot for [i=1:7] $DATA using i title columnhead
