@@ -1,0 +1,33 @@
+
+printf "%15s\n" hello how are you?
+
+
+
+
+printf "generate random nr: %-10s [done!]"
+
+
+
+
+printf "%-10s %s\n" "$i" "$pages"
+
+
+
+
+
+# length of maximum padding
+padding="......................................"
+
+printf "==== TABLE OF CONTENTS ===========================\n"
+
+# print first line
+title="1) Chapter one - the intro"
+printf "%s%s %s\n" "$title" "${padding:${#title}}" "Page 1"
+
+# print second line
+title="2) Chapter two - summary"
+printf "%s%s %s\n" "$title" "${padding:${#title}}" "Page 4"
+
+
+
+echo -e "\tuma linha tão comprida que não dá outra hipotese que não passar para a linha seguinte na esperança de conseguir verificar que o pading funciona" | fmt -w $(( $(tput cols) -  4 ))

@@ -22,5 +22,5 @@
 	TF Configuration [user input]
 	TF (monolithic) Core
 	TF Status [the result of refresh - managed by TF]
-	Providers [any external services I/P/SaaS]
+	Providers [any external services I/P/S aaS]
 	
