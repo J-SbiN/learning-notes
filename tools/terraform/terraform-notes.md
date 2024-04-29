@@ -171,11 +171,10 @@ ___
 - https://learn.hashicorp.com/terraform
 - https://www.terraform.io/docs/configuration/index.html
 - TF Syntax: https://github.com/hashicorp/hcl/blob/hcl2/hclsyntax/spec.md
-- Providers: https://registry.terraform.io/providers/
-- https://github.com/hashicorp/hcl/blob/hcl2/hclsyntax/spec.md
+- Providers: https://registry.terraform.io/browse/providers
 - AWS: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 - GCP: https://registry.terraform.io/providers/hashicorp/google/latest/docs
-- Azure: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management
+- Azure: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 ---
 \
 \
